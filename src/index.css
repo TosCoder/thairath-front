@@ -1,13 +1,73 @@
-body {
+html
+,body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: calc(100% - 22px) ;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.page-header-style {
+  background: rgb(1, 180, 0) !important;
+  padding: 5px 24px !important;
+}
+
+.profile-style {
+    background-color: rgba(var(--b3f,250,250,250),1);
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.ant-page-header-heading-title {
+  display: grid !important;
+  cursor: pointer !important;
+  color: #fff !important;
+}
+
+.ant-tabs-nav-wrap{
+  position: relative;
+  justify-content: center;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: rgb(1, 180, 0) !important;
+}
+
+.ant-tabs-tab:hover {
+  color:  rgb(1, 180, 0) !important;
+}
+
+
+.ant-tabs-ink-bar {
+  background: rgb(1, 180, 0) !important;
+}
+
+.list-news {
+  width: 293px;
+  height: 293px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 100ms;
+}
+
+.list-news:hover {
+  position: relative;
+  transform: scale(1.2);
+  z-index: 1;
 }
