@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react"
 import { Row, Col, Tabs } from "antd"
-import { Modal } from '../../components'
+import { Modal, Loading } from '../../components'
 import { thairathController } from '../../services'
 import {
     TableOutlined,
@@ -95,7 +95,7 @@ const Home = () => {
             :
 
             <Fragment>
-                Loading...
+               <Loading />
             </Fragment>
     )
 }
