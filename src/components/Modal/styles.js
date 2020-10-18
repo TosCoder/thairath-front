@@ -41,6 +41,8 @@ export const StyledBtnClose = styled.img`
 
 export const StyledTextCaption = styled.p`
     position: absolute;
+    max-height: 535px;
+    overflow-y: auto;
     font-size: 0.875rem;
     padding: 0px 16px 10px 16px;
     z-index: 4;
