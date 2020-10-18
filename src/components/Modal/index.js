@@ -1,4 +1,3 @@
-import { Col, Row } from 'antd'
 import React from 'react'
 import {
     StyledModal,
@@ -8,16 +7,22 @@ import {
     StyledTextCaption,
     StyledLogo
 } from './styles'
+import { Row, Col } from 'antd'
 import Cancel from '../../assets/icons/cancel.svg'
 
-export const Modal = ({ visible, onShow, page, imageProfile }) => {
+export const Modal = React.memo(({ visible, onShow, page, imageProfile }) => {
     return (
-        visible && <StyledModal>
+        visible && <StyledModal >
             <StyledBtnClose onClick={() => onShow()} alt='cancel' src={Cancel} />
-            <StyledThisNews>
+            <StyledThisNews height={page.dimensions.width > page.dimensions.height ? '400px' : '600px'}>
                 <Row>
                     <Col >
-                        <img alt='news' src={page.display} style={{ width: 'auto', height: '600px' }} />
+                        {page.video_url ?
+                            <video width="337.42px" height="600px" controls poster={page.display} src={page.video_url} type="video/mp4" autoPlay >
+                            </video>
+                            :
+                            <img alt='news' src={page.display} style={{ width: 'auto', height: page.dimensions.width > page.dimensions.height ? '400px' : '600px' }} />
+                        }
                     </Col>
                     <Col style={{ position: 'unset' }} >
                         <StyledHeaderCaption>
@@ -32,4 +37,4 @@ export const Modal = ({ visible, onShow, page, imageProfile }) => {
             </StyledThisNews>
         </StyledModal>
     )
-}
+})

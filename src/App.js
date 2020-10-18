@@ -1,20 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import { Home } from './containers'
-import { PageHeader } from 'antd';
+import { BrowserRouter } from 'react-router-dom'
+import { PublicRoute } from './routes'
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <PageHeader
-          className="page-header-style"
-          title="ไทยรัฐออนไลน์"
-        />
-        <div className="App">
-          <Home />
-        </div>
+        <BrowserRouter>
+          <PublicRoute />
+        </BrowserRouter>
       </Fragment>
+
 
     )
   }

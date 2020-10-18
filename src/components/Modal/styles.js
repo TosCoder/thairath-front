@@ -8,7 +8,7 @@ export const StyledModal = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(125, 125, 125, 0.91) !important;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
 `
@@ -18,7 +18,7 @@ export const StyledThisNews = styled.div`
     top: 17px;
     background-color: #ffffff;
     width: 935px;
-    height: 600px;
+    height: ${props => props.height};
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 `
 
@@ -45,8 +45,9 @@ export const StyledTextCaption = styled.p`
     padding: 0px 16px 10px 16px;
     z-index: 4;
     color: black;
-    text-align: justify;
+    text-align: initial;
     text-decoration: none;
+    word-break: break-word;
 `
 export const StyledHeaderCaption = styled.div`
     padding: 16px ;

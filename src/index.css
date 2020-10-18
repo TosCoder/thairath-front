@@ -16,8 +16,11 @@ code {
 }
 
 .page-header-style {
-  background: rgb(1, 180, 0) !important;
-  padding: 5px 24px !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 2 !important;
+    background: rgb(1, 180, 0) !important;
+    padding: 5px 24px !important;
 }
 
 .profile-style {
@@ -32,6 +35,7 @@ code {
     flex: 0 0 auto;
     overflow: hidden;
     position: relative;
+    margin-top: 60px;
 }
 
 .ant-page-header-heading-title {
