@@ -5,6 +5,8 @@ import { thairathController } from '../../services'
 
 const Home = (props) => {
     const [news, setNews] = useState()
+    const [newsPost, setNewspost] = useState([])
+    const [newsIgtv, setNewsIGTV] = useState([])
     const [page, setPage] = useState()
     const [type, setType] = useState('post')
     const [visible, setVisible] = useState(false)
@@ -12,9 +14,14 @@ const Home = (props) => {
 
     const getData = async () => {
         const res = await thairathController().getAll()
-        if (res.status === 200) {
+        console.log(res)
+        if (res && res.status === 200) {
             const data = res.data
             setNews(data)
+            setNewspost(data.newsPost.edges)
+            setNewsIGTV(data.newsIGTV.edges)
+        }else{
+            
         }
     }
 
@@ -56,7 +63,7 @@ const Home = (props) => {
                 </Row>
                 <Tabs type={type} setType={setType} />
                 <Row>
-                    <List data={type === 'post' ? news.newsPost.edges : news.newsIGTV.edges} onShow={onShow} />
+                    <List data={type === 'post' ? newsPost : newsIgtv} onShow={onShow} />
                 </Row>
             </Fragment>
             :<Loading />

@@ -18,8 +18,7 @@ export const Modal = React.memo(({ visible, onShow, page, imageProfile }) => {
                 <Row>
                     <Col >
                         {page.video_url ?
-                            <video width="337.42px" height="600px" controls poster={page.display} src={page.video_url} type="video/mp4" autoPlay >
-                            </video>
+                            <video width="337.42px" height="600px" controls poster={page.display} src={page.video_url} type="video/mp4" autoPlay />
                             :
                             <img alt='news' src={page.display} style={{ width: 'auto', height: page.dimensions.width > page.dimensions.height ? '400px' : '600px' }} />
                         }
